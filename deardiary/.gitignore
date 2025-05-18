@@ -2,7 +2,6 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-.utmp/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -60,11 +59,7 @@ sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
-*.unitypackage.meta
 *.app
-
-#Vuforia tgz (more than 100MB, download)
-com.ptc.vuforia.engine-11.0.4.tgz
 
 # Crashlytics generated file
 crashlytics-build.properties

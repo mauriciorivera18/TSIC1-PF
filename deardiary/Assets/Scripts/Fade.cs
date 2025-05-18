@@ -7,19 +7,17 @@ public class Fade : MonoBehaviour
 {
     public static Fade Instance;
 
-    public Image fadeImage;                // Imagen negra para el fade de pantalla
-    public CanvasGroup uiCanvasGroup;      // UI que queremos desvanecer
-    //public string sceneName;
-    public float fadeDuration = 1f;
-    public AudioSource effect;
+    public Image fadeImage; //Imagen que se le aplicará el efecto de fade
+    public CanvasGroup uiCanvasGroup; //Canvas donde se encuentra la imagen
+    public string sceneName; // Indica la siguiente escena a reproduci después del efecto
+    public float fadeDuration = 1f; //Duración del efecto
+    public AudioSource effect; //Efecto al pasar de escena
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-            //SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -30,46 +28,39 @@ public class Fade : MonoBehaviour
 
     private void Start()
     {
+        //Establece la imagen como opaca
         Color c = fadeImage.color;
         c.a = 1f;
         fadeImage.color = c;
-
-        StartCoroutine(FadeIn());
-        //new WaitForSeconds(5f);
-        //StartCoroutine(WaitThenFadeOut(sceneName));
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
         StartCoroutine(FadeIn());
     }
 
-    public void ChangeScene(string sceneName)
+    // Cambia la escena indicada en el inspector
+    public void ChangeSceneFromInspector()
     {
-        //StartCoroutine(FadeOut(sceneName));
+        ChangeScene(sceneName);
+    }
+
+    //Hace el cambio de escena
+    public void ChangeScene(string newSceneName)
+    {
         effect.Play();
-        Debug.Log("Cambiando a la escena: " + sceneName);
-        StartCoroutine(WaitThenFadeOut(sceneName));
+        Debug.Log("Cambiando a la escena: " + newSceneName);
+        StartCoroutine(WaitThenFadeOut(newSceneName));
     }
 
-    IEnumerator WaitThenFadeOut(string sceneName)
+    //Llama a la corrutina que hace el effecto de fade out
+    IEnumerator WaitThenFadeOut(string sceneToLoad)
     {
-        // Espera 5 segundos antes de comenzar el fade out
-        //yield return new WaitForSeconds(5f);
-
-        // Ahora hace el fade y cambia de escena        
-        yield return StartCoroutine(FadeOut(sceneName));
+        yield return StartCoroutine(FadeOut(sceneToLoad));
     }
 
+    //Corrutina que hace efecto de fade in a la escena. Aumenta la opacidad de la imagen.
     IEnumerator FadeIn()
     {
-        Debug.Log("Fade In");
-        //float t = fadeDuration;
         float t = 0;
-
         while (t > 0f)
         {
-            //t -= Time.deltaTime;
             t += Time.deltaTime;
             float alpha = t / fadeDuration;
 
@@ -89,26 +80,26 @@ public class Fade : MonoBehaviour
         if (fadeImage != null)
         {
             Color c = fadeImage.color;
-            //c.a = 0f;
             c.a = 1f;
             fadeImage.color = c;
         }
 
         if (uiCanvasGroup != null)
             uiCanvasGroup.alpha = 1f;
-            //uiCanvasGroup.alpha = 0f;
-
     }
 
-    IEnumerator FadeOut(string sceneName)
+    /*Corrutina que hace efecto de fade out a la escena. Disminuye la opacidad de la imagen.
+     * 
+     *Args:
+     *  sceneToLoad: escena a la cual cambiará
+     */
+    IEnumerator FadeOut(string sceneToLoad)
     {
-        Debug.Log("Fade Out");
-        float t = 0f;        
+        float t = 0f;
 
         while (t < fadeDuration)
         {
             t += Time.deltaTime;
-            //float alpha = t / fadeDuration;
             float alpha = 1 - (t / fadeDuration);
 
             if (fadeImage != null)
@@ -134,6 +125,6 @@ public class Fade : MonoBehaviour
         if (uiCanvasGroup != null)
             uiCanvasGroup.alpha = 0f;
 
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneToLoad);
     }
 }
