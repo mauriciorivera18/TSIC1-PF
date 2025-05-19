@@ -101,6 +101,6 @@ public class ShuffleUIManager : MonoBehaviour
     {
         // Puedes cambiar "NombreDeLaSiguienteEscena" por la escena que desees cargar.
         Debug.Log("UIManagerAR: Botón Continuar presionado.");
-        SceneManager.LoadScene("V3");
+        SceneManager.LoadScene("V7.5");
     }
 }
