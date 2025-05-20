@@ -1514,7 +1514,7 @@ MonoBehaviour:
   parent: {fileID: 352584068}
   frontMaterials:
   - {fileID: 2100000, guid: b0240467cf4ec2b48911d2f9f7157997, type: 2}
-  - {fileID: 2100000, guid: b336b88da1c26f544808f96997aef157, type: 2}
+  - {fileID: 2100000, guid: f2012376e70533e409620d7fcbde5f89, type: 2}
   - {fileID: 2100000, guid: db57122fe6b352b4c8c667464fdd1081, type: 2}
   - {fileID: 2100000, guid: d1d1dd0672862e64ba59f61a56b4cc8c, type: 2}
   - {fileID: 2100000, guid: 18bb0913e12f8e942b7f8671e3641f9f, type: 2}
