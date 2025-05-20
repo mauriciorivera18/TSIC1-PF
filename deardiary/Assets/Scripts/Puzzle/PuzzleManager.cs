@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -7,12 +6,22 @@ public class PuzzleManager : MonoBehaviour
 
     private int correctPieces = 0;
     public int totalPieces = 9;
-    public GameObject winText;
     public Transform piecesContainer;
+
+    private PuzzleUIManager uiManager;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        uiManager = FindObjectOfType<PuzzleUIManager>();
+        if (uiManager == null)
+        {
+            Debug.LogWarning("PuzzleManager: No se encontró PuzzleUIManager en la escena.");
+        }
     }
 
     public void PiecePlacedCorrectly()
@@ -20,14 +29,18 @@ public class PuzzleManager : MonoBehaviour
         correctPieces++;
         if (correctPieces == totalPieces)
         {
-            winText.SetActive(true);
+            Debug.Log("PuzzleManager: Puzzle completo.");
+            if (uiManager != null)
+                uiManager.ShowWinPanel();
         }
     }
 
     public void RestartPuzzle()
     {
         correctPieces = 0;
-        winText.SetActive(false);
+
+        if (uiManager != null)
+            uiManager.HideWinPanel();
 
         foreach (Transform piece in piecesContainer)
         {
