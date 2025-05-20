@@ -432,6 +432,7 @@ public class TextBoxMangmentScene : MonoBehaviour
                 icons[0].SetActive(false);
                 icons[9].SetActive(true);
                 fullText = textBoxItem.Find("2_07")?.GetComponent<TMP_Text>().text;
+                textTemplate.color = Color.white;
                 textTemplate.text = "";
                 tempColor = textBox.GetComponent<Image>();
                 tempColor.color = new Color(0.5f, 0.5f, 0.5f);
@@ -459,6 +460,7 @@ public class TextBoxMangmentScene : MonoBehaviour
                 icons[9].SetActive(false);
                 tempColor.color = new Color(1.0f, 1.0f, 1.0f);
                 tempIcon.color = new Color(1.0f, 1.0f, 1.0f);
+                textTemplate.color = Color.black;
                 yield return new WaitForSeconds(0.3f);
                 icons[12].SetActive(true);
                 yield return new WaitForSeconds(0.25f);
@@ -617,6 +619,7 @@ public class TextBoxMangmentScene : MonoBehaviour
                 }
                 yield return new WaitForSeconds(1.0f);
 
+                textTemplate.color = Color.white;
                 tempColor.color = new Color(0.50f, 0.50f, 0.50f);
                 //tempIcon = icons[8].GetComponent<Image>();
                 tempIcon.color = new Color(0.50f, 0.50f, 0.50f);
@@ -680,6 +683,7 @@ public class TextBoxMangmentScene : MonoBehaviour
 
                 icons[7].SetActive(false);
                 tempIcon = icons[7].GetComponent<Image>();
+                textTemplate.color = Color.black;
                 tempColor.color = new Color(1.0f, 1.0f, 1.0f);
 
                 erasedTextTemplate.text = "";
@@ -709,6 +713,7 @@ public class TextBoxMangmentScene : MonoBehaviour
 
                 yield return new WaitForSeconds(0.5f);
                 tempIcon = icons[14].GetComponent<Image>();
+                textTemplate.color = Color.white;
                 tempIcon.color = new Color(0.25f, 0.0f, 0.0f);
                 icons[14].SetActive(true);
                 yield return new WaitForSeconds(0.5f);
@@ -717,6 +722,7 @@ public class TextBoxMangmentScene : MonoBehaviour
                 erasedTextTemplate.text = "";
                 icons[3].SetActive(true);
 
+                textTemplate.color = Color.black;
                 tempColor.color = new Color(1.0f, 1.0f, 1.0f);
                 tempIcon.color = new Color(1.0f, 1.0f, 1.0f);
 
@@ -767,12 +773,16 @@ public class TextBoxMangmentScene : MonoBehaviour
                 audioSource.Play();
                 yield return new WaitForSeconds(0.5f);
                 tempIcon = icons[7].GetComponent<Image>();
+                textTemplate.color = Color.white;
                 tempIcon.color = new Color(0.5f, 0.5f, 0.5f);
+                textTemplate.color = Color.white;
                 tempIcon = icons[3].GetComponent<Image>();
                 tempIcon.color = new Color(1.0f, 0.0f, 0.0f);
                 tempIcon = icons[1].GetComponent<Image>();
+                textTemplate.color = Color.white;
                 tempIcon.color = new Color(1.0f, 0.0f, 0.0f);
                 tempColor = textBox.GetComponent<Image>();
+                textTemplate.color = Color.white;
                 tempColor.color = new Color(0.5f, 0.5f, 0.5f);
                 icons[7].SetActive(true);
                 textBox.SetActive(true);
@@ -811,7 +821,9 @@ public class TextBoxMangmentScene : MonoBehaviour
                 icons[7].SetActive(false);
                 icons[3].SetActive(true);
                 fullText = textBoxItem.Find("4_02")?.GetComponent<TMP_Text>().text;
+                textTemplate.color = Color.white;
                 textTemplate.text = "";
+                creepyTextTemplate.color = Color.white;
                 foreach (char letter in fullText)
                 {
                     if (stopTextCoroutine)
@@ -822,10 +834,12 @@ public class TextBoxMangmentScene : MonoBehaviour
                 }
                 yield return new WaitForSeconds(1.0f);
 
+                textTemplate.color = Color.white;
                 tempColor.color = new Color(0.5f, 0.5f, 0.5f);
                 icons[7].SetActive(true);
                 icons[3].SetActive(false);
                 fullText = textBoxItem.Find("4_03")?.GetComponent<TMP_Text>().text;
+                creepyTextTemplate.color= Color.white;
                 creepyTextTemplate.text = "";
                 audioSource.clip = clips[2];
                 
@@ -858,6 +872,7 @@ public class TextBoxMangmentScene : MonoBehaviour
                 yield return new WaitForSeconds(1.0f);
                 erasedTextTemplate.text = "";
 
+                textTemplate.color = Color.white;
                 tempColor.color = new Color(1.0f, 0.0f, 0.0f);
                 icons[7].SetActive(false);
                 icons[1].SetActive(true);
@@ -881,6 +896,7 @@ public class TextBoxMangmentScene : MonoBehaviour
             case 4:
                 icons[5].SetActive(true);
                 tempColor = textBox.GetComponent<Image>();
+                textTemplate.color = Color.white;
                 tempColor.color = new Color(0.0f, 0.0f, 0.0f);
                 textBox.SetActive(true);
                 yield return new WaitForSeconds(2.0f);
@@ -971,6 +987,7 @@ public class TextBoxMangmentScene : MonoBehaviour
                 break;
             default:
                 tempColor = textBox.GetComponent<Image>();
+                textTemplate.color = Color.black;
                 tempColor.color = new Color(1.0f, 1.0f, 1.0f);
                 textBox.SetActive(true);
                 Debug.LogWarning("Entró a Default");

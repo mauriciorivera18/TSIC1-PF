@@ -18,7 +18,6 @@ public class TextBoxMangment : MonoBehaviour
     [SerializeField] private GameObject backgroundPanel; //Fondo
     [SerializeField] private AudioSource audioSource; //Componente de audio
     [SerializeField] private AudioClip[] clips; //Audios a reproducir
-    public GameObject Bob;
 
     //Componentes visuales del diálogo
     [SerializeField] private GameObject[] icons;
@@ -104,9 +103,6 @@ public class TextBoxMangment : MonoBehaviour
         // Si ya terminó/interrumpió la narración
         if (targetFinished != null && noTarget < targetFinished.Length && targetFinished[noTarget])
         {
-            StartCoroutine(BobCoroutine());
-
-
             if (backgroundPanel != null) 
                 backgroundPanel.SetActive(false);
             if (textBox != null) 
@@ -166,12 +162,7 @@ public class TextBoxMangment : MonoBehaviour
             continueModels[lastNoTarget].SetActive(true);
     }
 
-    private IEnumerator BobCoroutine()
-    {
-        Bob.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        Bob.SetActive(false);
-    }
+
 
     /*
      * Reproduce la corrutina del texto. Muestra los componentes gráficos del diálogo.
