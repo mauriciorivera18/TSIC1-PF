@@ -6,7 +6,7 @@ public class Cup : MonoBehaviour
     private Vector3 initialPosition;
     private bool isLifted = false;
 
-    private float raiseHeight = 0.15f;
+    private float raiseHeight = 0.4f;
     private float animationDuration = 0.7f;
 
     private Vector3 initialLocalPosition;
