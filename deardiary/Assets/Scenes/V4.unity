@@ -668,7 +668,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e5e8da5e6bef1942bc7dc31888e4578, type: 2}
+  - {fileID: 2100000, guid: 71fb8fb45399aef4ba2af82b6d0b0b3c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14617,7 +14617,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ef43c184faf289c4db06f3267ac3c39f, type: 3}
   - {fileID: 8300000, guid: f16b26aa66bad584faa941170e110a54, type: 3}
   - {fileID: 8300000, guid: bf1162165d7317e439ae2001f6b1b2d9, type: 3}
-  Bob: {fileID: 4853578970739553847}
   icons:
   - {fileID: 9104696864709861796}
   - {fileID: 1410202231767687718}
