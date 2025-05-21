@@ -26,6 +26,13 @@ public class DetectorForAnimation : MonoBehaviour
         }
     }
 
+    /*
+    * Se llama cuando el estado de un marcador de Vuforia cambia.
+    *
+    * Args:
+    *   behaviour: El ObserverBehaviour correspondiente al marcador detectado.
+    *   status: El estado del marcador (TRACKED, NOT_FOUND, ...).
+    */
     private void OnTargetStatusChanged(ObserverBehaviour behaviour, TargetStatus status)
     {
         int index = System.Array.IndexOf(ImageTargets, behaviour);

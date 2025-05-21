@@ -23,7 +23,6 @@ public class DragAndDrop : MonoBehaviour
     {
         transform.localScale = originalScale;
 
-        // --- Soporte para Mouse (Editor o PC) ---
         if (!placed && Input.GetMouseButtonDown(0))
         {
             TryStartDrag(Input.mousePosition);
@@ -37,7 +36,6 @@ public class DragAndDrop : MonoBehaviour
             EndDrag();
         }
 
-        // --- Soporte para Touch (Móviles) ---
         if (!placed && Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -92,8 +90,6 @@ public class DragAndDrop : MonoBehaviour
             transform.position = targetSlot.position;
             placed = true;
             StartCoroutine(SnapEffect());
-            //rend.material.EnableKeyword("_EMISSION");
-            //rend.material.SetColor("_EmissionColor", Color.green);
             Debug.Log($"{gameObject.name} POSICIONADA correctamente en {targetSlot.name}");
             PuzzleManager.Instance.PiecePlacedCorrectly();
         }
