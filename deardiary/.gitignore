@@ -64,6 +64,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+#Vuforia tgz (more than 100MB, download)
+/Packages/com.ptc.vuforia.engine-11.1.3.tgz
+
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 

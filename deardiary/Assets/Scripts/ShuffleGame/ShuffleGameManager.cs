@@ -167,7 +167,7 @@ public class ShuffleGameManager : MonoBehaviour
             Vector3 cupPos = cups[cupIndex].transform.position;
             float gap = 0.03f;
             float cupHeight = cups[cupIndex].GetComponent<Renderer>().bounds.size.y;
-            float ballHeight = ball.GetComponent<Renderer>().bounds.size.y;
+            //float ballHeight = ball.GetComponent<Renderer>().bounds.size.y;
             Vector3 cupLocalPos = cups[cupIndex].transform.localPosition;
             /*ball.transform.localPosition = new Vector3(
                 cupLocalPos.x,
@@ -175,7 +175,7 @@ public class ShuffleGameManager : MonoBehaviour
                 cupLocalPos.z
             );*/
 
-            ball.transform.localPosition = selectedCupOriginalLocalPosition;
+            //ball.transform.localPosition = selectedCupOriginalLocalPosition;
             ball.SetActive(true);
             // =========================================================
 

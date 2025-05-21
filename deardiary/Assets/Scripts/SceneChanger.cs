@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class SceneChanger : MonoBehaviour
+namespace Assets.Scripts
 {
-    public void CambiarAEscena2()
+    public class SceneChanger : MonoBehaviour
     {
-        Fade.Instance.ChangeScene("V3");
-    }
+        public void CambiarAEscena2()
+        {
+            Fade.Instance.ChangeScene("V3");
+        }
 
-    public void CambiarAEscenaFinal()
-    {
-        Fade.Instance.ChangeScene("V4");
+        public void CambiarAEscenaFinal()
+        {
+            Fade.Instance.ChangeScene("V4");
+        }
     }
 }
